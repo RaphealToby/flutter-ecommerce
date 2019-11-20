@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ralph_store/pages/product_details.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -71,7 +72,7 @@ class _ProductsState extends State<Products> {
         gridDelegate:
             new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
-          //Context is where the item sits inside the app
+          //Context is where a widget is located in the app
           return Single_prod(
             prod_name: product_list[index]['name'],
             prod_picture: product_list[index]['picture'],
@@ -104,7 +105,9 @@ class Single_prod extends StatelessWidget {
           tag: prod_name,
           child: Material(
             child: InkWell(
-              onTap: () {},
+              // To create link to the Product details page by clicking on each item
+              onTap: () => Navigator.of(context).push(new MaterialPageRoute(
+                  builder: (context) => ProductDetails())),
               child: GridTile(
                   footer: Container(
                     color: Colors.white70,
@@ -113,9 +116,18 @@ class Single_prod extends StatelessWidget {
                         prod_name,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      title: Text("# $prod_price",style: TextStyle(color: Colors.red, fontWeight: FontWeight.w800),),
-                      subtitle: Text("# $prod_old_price", style: TextStyle(color: Colors.black54, fontWeight: FontWeight.w800, decoration: TextDecoration.lineThrough),),
-
+                      title: Text(
+                        "# $prod_price",
+                        style: TextStyle(
+                            color: Colors.red, fontWeight: FontWeight.w800),
+                      ),
+                      subtitle: Text(
+                        "# $prod_old_price",
+                        style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.w800,
+                            decoration: TextDecoration.lineThrough),
+                      ),
                     ),
                   ),
                   child: Image.asset(

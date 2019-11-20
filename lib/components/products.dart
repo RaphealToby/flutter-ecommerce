@@ -107,7 +107,14 @@ class Single_prod extends StatelessWidget {
             child: InkWell(
               // To create link to the Product details page by clicking on each item
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                  builder: (context) => ProductDetails())),
+                  builder: (context) => ProductDetails(
+                    // We are passing the details of the clicked product from the product page
+                    //to the product details page
+                    product_details_name: prod_name,
+                    product_details_picture: prod_picture,
+                    product_details_old_price: prod_old_price,
+                    product_details_new_price: prod_price,
+                  ))),
               child: GridTile(
                   footer: Container(
                     color: Colors.white70,

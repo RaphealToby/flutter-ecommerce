@@ -47,26 +47,47 @@ class _ProductDetailsState extends State<ProductDetails> {
           new Container(
             height: 300.0,
             child: GridTile(
-                child: Container(
-              color: Colors.white70,
-              child: Image.asset(widget.product_details_picture),
-            ),
+              child: Container(
+                color: Colors.white70,
+                child: Image.asset(widget.product_details_picture),
+              ),
               footer: new Container(
-                color: Colors.white, child: ListTile(
-                leading: new Text(widget.product_details_name,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),),
-                title: new Row(
-                  children: <Widget>[
-                    Expanded(child: new Text("\#${widget.product_details_old_price}",
-                    style: TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough),)),
-                    Expanded(child: new Text("${widget.product_details_new_price}",
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),)),
-                  ],
+                color: Colors.white70,
+                child: ListTile(
+                  leading: new Text(
+                    widget.product_details_name,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                  ),
+                  title: new Row(
+                    children: <Widget>[
+                      Expanded(
+                          child: new Text(
+                        "\#${widget.product_details_old_price}",
+                        style: TextStyle(
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough),
+                      )),
+                      Expanded(
+                          child: new Text(
+                        "${widget.product_details_new_price}",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.red),
+                      )),
+                    ],
+                  ),
                 ),
               ),
-              ),
             ),
-          )
+          ),
+          Row(
+            children: <Widget>[
+              Expanded(child: MaterialButton(onPressed: (){},
+              color: Colors.white,
+
+              ))
+            ],
+          ),
         ],
       ),
     );

@@ -3,6 +3,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 
 // Other dart flies import
 import 'package:ralph_store/components/horizontal_listview.dart';
+import 'package:ralph_store/components/products.dart';
 
 void main() {
   runApp(MaterialApp(

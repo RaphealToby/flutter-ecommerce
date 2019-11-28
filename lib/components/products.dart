@@ -102,7 +102,7 @@ class Single_prod extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: Hero(
-          tag: prod_name,
+          tag: new Text("hero1"),
           child: Material(
             child: InkWell(
               // To create link to the Product details page by clicking on each item

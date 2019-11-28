@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
 //        dotSize: 4.0,
         indicatorBgPadding:6.0 ,
         dotColor: Colors.red,
+        dotBgColor: Colors.transparent,
       ),
     );
 
@@ -121,9 +122,9 @@ class _HomePageState extends State<HomePage> {
             InkWell(
               onTap: () {},
               child: ListTile(
-                title: Text('Categories'),
+                title: Text('Shopping Cart'),
                 leading: Icon(
-                  Icons.dashboard,
+                  Icons.shopping_cart,
                   color: Colors.red,
                 ),
               ),

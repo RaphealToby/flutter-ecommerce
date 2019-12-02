@@ -4,6 +4,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 // Other dart flies import
 import 'package:ralph_store/components/horizontal_listview.dart';
 import 'package:ralph_store/components/products.dart';
+import 'package:ralph_store/pages/cart.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -58,13 +59,16 @@ class _HomePageState extends State<HomePage> {
                 Icons.search,
                 color: Colors.white,
               ),
-              onPressed: () {}),
+              onPressed: () {}
+              ),
           new IconButton(
               icon: Icon(
                 Icons.shopping_cart,
                 color: Colors.white,
               ),
-              onPressed: () {})
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cart()));
+              })
         ],
       ),
 
@@ -120,7 +124,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Cart()));
+              },
               child: ListTile(
                 title: Text('Shopping Cart'),
                 leading: Icon(

@@ -179,15 +179,19 @@ class _HomePageState extends State<HomePage> {
           image_carousel,
 
           // Padding widget for displaying category header
-          new Padding(padding: const EdgeInsets.all(6.0),
-          child: new Text('Categories'),),
+          new Padding(padding: const EdgeInsets.all(2.0),
+          child: Container(
+              alignment: Alignment.centerLeft,
+              child: new Text('Categories')),),
 
           // Horizontal List for category from horizontal_listview.dart file
           HorizontalList(),
 
           // Padding widget for displaying Recent item header
-          new Padding(padding: const EdgeInsets.all(20.0),
-            child: new Text('Recent Items'),),
+          new Padding(padding: const EdgeInsets.all(4.0),
+            child: Container(
+                alignment: Alignment.centerLeft,
+                child: new Text('Recent Items')),),
 
           //Grid view for recent Items
           Container(

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "671170797389",
+    "firebase_url": "https://ecommerce-f9adf.firebaseio.com",
+    "project_id": "ecommerce-f9adf",
+    "storage_bucket": "ecommerce-f9adf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671170797389:android:4da2c6d88408edf8f26104",
+        "android_client_info": {
+          "package_name": "com.example.ralph_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671170797389-el9h4in2mcn8b9uf92kv7k51ovqv53ds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ralph_store",
+            "certificate_hash": "977ef274bd5dfb3a3579301a9e2553c9a34c4dc2"
+          }
+        },
+        {
+          "client_id": "671170797389-9k96kgu7ef7v1fr1c7p3fec8b9kv1kjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgBMgVWvllOEnJEKMcUyrlgOkoV3xLrHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671170797389-9k96kgu7ef7v1fr1c7p3fec8b9kv1kjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

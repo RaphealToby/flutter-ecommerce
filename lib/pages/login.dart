@@ -56,7 +56,7 @@ class _LoginState extends State<Login> {
     //Check if the user exist in db using query
     GoogleSignInAccount googleUser = await googleSignIn.signIn();
     GoogleSignInAuthentication googleSignInAuthentication =
-        await googleUser.authentication;
+    await googleUser.authentication;
     FirebaseUser firebaseUser = await firebaseAuth.signInWithGoogle(
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken);
@@ -75,7 +75,7 @@ class _LoginState extends State<Login> {
             });
         await preferences.setString("id", firebaseUser.uid);
         await preferences.setString("username", firebaseUser.displayName);
-        await preferences.setString("photoUrl", firebaseUser.displayName);
+        await preferences.setString("photoUrl", firebaseUser.photoUrl);
       }else{
         //IF THE USER EXISTS ALREADY
         await preferences.setString("id", documents[0]['id']);
@@ -89,7 +89,8 @@ class _LoginState extends State<Login> {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomePage()));
 
-    }else{
+    }
+    else{
       Fluttertoast.showToast(msg: "Login Failed : (");
     }
   }
@@ -108,18 +109,20 @@ class _LoginState extends State<Login> {
           Center(
             child: FlatButton(
                 color: Colors.red.shade900,
-          onPressed: (){},
+                onPressed: (){
+                  handleSignIn();
+                },
                 child: Text("Sign in / Sign up with google", style: TextStyle(color: Colors.white),)),
           ),
-          
+
           Visibility(
-              visible: loading ?? true,
-              child: Container(
-                color: Colors.white.withOpacity(0.7),
-                child: CircularProgressIndicator(
-                  valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
-                ),
+            visible: loading ?? true,
+            child: Container(
+              color: Colors.white.withOpacity(0.7),
+              child: CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation<Color>(Colors.red),
               ),
+            ),
           )
         ],
       ),
